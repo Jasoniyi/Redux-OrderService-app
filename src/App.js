@@ -6,12 +6,10 @@ import {
   MDBRow,
   MDBCard,
   MDBCardBody,
-  MDBCardTitle,
-  MDBCardText,
   MDBCardHeader,
   MDBIcon
 } from "mdbreact";
-import { MDBTable, MDBTableBody, MDBTableHead } from "mdbreact";
+import { MDBTable, MDBTableHead } from "mdbreact";
 import "./index.css";
 
 import OrderLists from "./components/OrderLists";
@@ -30,7 +28,10 @@ class App extends Component {
 
                   <div className="left">
                     <CreateOrder />
-                    <MDBBtn className="btn-style">
+                    <MDBBtn
+                      className="btn-style"
+                      onClick={() => document.location.reload()}
+                    >
                       <i>
                         <MDBIcon icon="sync" className="mr-1" />
                       </i>{" "}
@@ -60,29 +61,6 @@ class App extends Component {
           </MDBCol>
         </MDBRow>
       </MDBContainer>
-      // <div className="container-fluid">
-      //   <div className="row mt-3">
-      //     <div className="col-lg-12">
-      //       <div className="card">
-      //         <div className="card-header">Student Registry</div>
-      //         <div className="card-body">
-      //           <table className="table table-hover">
-      //             <thead className="thead-dark">
-      //               <tr>
-      //                 <th>Name</th>
-      //                 <th>Grade</th>
-      //                 <th>School</th>
-      //                 <th>Edit/Save</th>
-      //                 <th>Delete</th>
-      //               </tr>
-      //             </thead>
-      //             <OrderLists />
-      //           </table>
-      //         </div>
-      //       </div>
-      //     </div>
-      //   </div>
-      // </div>
     );
   }
 }

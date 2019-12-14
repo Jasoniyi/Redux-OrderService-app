@@ -18,13 +18,8 @@ const CreateOrder = props => {
   const [name, setName] = useState("");
   const [location, setLocation] = useState("");
   const [orderDate, setOrderDate] = useState("");
-  const [status, setStatus] = useState([
-    "Choose your Order",
-    "Cancelled",
-    "Shipped",
-    "Pending",
-    "Delivered"
-  ]);
+  const [status, setStatus] = useState("Choose your Order");
+
   const [netAmount, setNetAmount] = useState("");
 
   const toggle = () => {
@@ -98,13 +93,14 @@ const CreateOrder = props => {
 
                 <select
                   className="browser-default custom-select"
-                  // value={status}
-                  // onChange={handleStatusChange}
+                  value={status}
+                  onChange={handleStatusChange}
                 >
-                  {/* <option>Choose your order status</option> */}
-                  {status.map((item, i) => (
-                    <option key={i}>{item}</option>
-                  ))}
+                  <option>Choose your order status</option>
+                  <option>Cancelled</option>
+                  <option>Shipped</option>
+                  <option>Pending</option>
+                  <option>Delivered</option>
                 </select>
 
                 <MDBInput
